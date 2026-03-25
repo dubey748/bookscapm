@@ -114,3 +114,34 @@ GET http://localhost:4004/odata/v4/relationship/Header
 ###
 
 GET http://localhost:4004/odata/v4/relationship/Items
+
+### Composition
+
+GET http://localhost:4004/odata/v4/relationship/salesOrderHeader
+
+###
+
+GET http://localhost:4004/odata/v4/relationship/salesOrderItems
+
+### Deep Entity composition 
+
+POST http://localhost:4004/odata/v4/relationship/salesOrderHeader
+Content-Type: application/json
+
+{
+  "description": "My New Order",
+  "items_details_comp": [
+    {
+      "product": "iphone",
+      "quantity": 100
+    },
+    {
+      "product": "charger",
+      "quantity": 100
+    },
+    {
+      "product": "powerbank",
+      "quantity": 10
+    }
+  ]
+}
