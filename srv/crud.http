@@ -1,8 +1,108 @@
-GET  http://localhost:4004/odata/v4/catalog
-###
+### Service Root
 
-GET  http://localhost:4004/odata/v4/catalog/BooksSet
+GET http://localhost:4004/odata/v4/catalog
 
-###
+### Metadata
 
-GET http://localhost:4004/odata/v4/catalog/BooksSet(11111111-1111-1111-1111-111111111111)
+GET http://localhost:4004/odata/v4/catalog/$metadata
+
+### Get All Books
+
+GET http://localhost:4004/odata/v4/catalog/Books
+
+### Get Single Book
+
+GET http://localhost:4004/odata/v4/catalog/Books(11111111-1111-1111-1111-111111111111)
+
+### Get with Filter
+
+GET http://localhost:4004/odata/v4/catalog/Books?$filter=price gt 200
+
+### Get with OrderBy
+
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=price desc
+
+### Get Top Records
+
+GET http://localhost:4004/odata/v4/catalog/Books?$top=2
+
+### Get Skip Records
+
+GET http://localhost:4004/odata/v4/catalog/Books?$skip=1
+
+### Count
+
+GET http://localhost:4004/odata/v4/catalog/Books/$count
+
+### Create Book (POST)
+
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+"title": "CAP Guide",
+"Author": "Abhishek",
+"price": 450,
+"publishDate": "2024-05-01T10:00:00",
+"digitalCopy": true
+}
+
+### Create Book 2
+
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+"title": "NodeJS Basics",
+"Author": "Rohit",
+"price": 299,
+"publishDate": "2023-12-10T09:30:00",
+"digitalCopy": false
+}
+
+### Update Book (PATCH)
+
+PATCH http://localhost:4004/odata/v4/catalog/Books(11111111-1111-1111-1111-111111111111)
+Content-Type: application/json
+
+{
+"price": 999
+}
+
+### Update Multiple Fields
+
+PATCH http://localhost:4004/odata/v4/catalog/Books(11111111-1111-1111-1111-111111111111)
+Content-Type: application/json
+
+{
+"title": "Updated Book",
+"price": 555
+}
+
+### Delete Book
+
+DELETE http://localhost:4004/odata/v4/catalog/Books(11111111-1111-1111-1111-111111111111)
+
+### Delete Another Book
+
+DELETE http://localhost:4004/odata/v4/catalog/Books(22222222-2222-2222-2222-222222222222)
+
+### Search (contains)
+
+GET http://localhost:4004/odata/v4/catalog/Books?$filter=contains(title,'CAP')
+
+### Filter Boolean
+
+GET http://localhost:4004/odata/v4/catalog/Books?$filter=digitalCopy eq true
+
+### Filter Price Range
+
+GET http://localhost:4004/odata/v4/catalog/Books?$filter=price gt 100 and price lt 500
+
+### Select Fields
+
+GET http://localhost:4004/odata/v4/catalog/Books?$select=title,price
+
+### Expand (for future association)
+
+GET http://localhost:4004/odata/v4/catalog/Books?$expand=*

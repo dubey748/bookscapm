@@ -1,6 +1,0 @@
-
-GET  http://localhost:4004/odata/v4/book-srv
-
-###
-
-GET  http://localhost:4004/odata/v4/book-srv/BooksSet
