@@ -106,3 +106,11 @@ GET http://localhost:4004/odata/v4/catalog/Books?$select=title,price
 ### Expand (for future association)
 
 GET http://localhost:4004/odata/v4/catalog/Books?$expand=*
+
+### Assosiation 
+
+GET http://localhost:4004/odata/v4/relationship/Header
+
+###
+
+GET http://localhost:4004/odata/v4/relationship/Items
