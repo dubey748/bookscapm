@@ -1,0 +1,8 @@
+GET  http://localhost:4004/odata/v4/catalog
+###
+
+GET  http://localhost:4004/odata/v4/catalog/BooksSet
+
+###
+
+GET http://localhost:4004/odata/v4/catalog/BooksSet(11111111-1111-1111-1111-111111111111)
