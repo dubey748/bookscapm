@@ -12,7 +12,7 @@ GET http://localhost:4004/odata/v4/catalog/Books
 
 ### Get Single Book
 
-GET http://localhost:4004/odata/v4/catalog/Books(11111111-1111-1111-1111-111111111111)
+GET http://localhost:4004/odata/v4/catalog/Books(3f00960f-550a-4bce-9919-713a69989920)
 
 ### Get with Filter
 
@@ -40,9 +40,9 @@ POST http://localhost:4004/odata/v4/catalog/Books
 Content-Type: application/json
 
 {
-"title": "CAP Guide",
-"Author": "Abhishek",
-"price": 450,
+"title": "CAPM Dev",
+"Author": "Abhishek Dubey",
+"price": 1000,
 "publishDate": "2024-05-01T10:00:00",
 "digitalCopy": true
 }
@@ -66,7 +66,7 @@ PATCH http://localhost:4004/odata/v4/catalog/Books(11111111-1111-1111-1111-11111
 Content-Type: application/json
 
 {
-"price": 999
+"price": 2006
 }
 
 ### Update Multiple Fields
