@@ -42,7 +42,7 @@ Content-Type: application/json
 {
 "title": "CAPM Dev",
 "Author": "Abhishek Dubey",
-"price": 1000,
+"price": -11,
 "publishDate": "2024-05-01T10:00:00",
 "digitalCopy": true
 }

@@ -69,5 +69,13 @@ module.exports = srv => {
             DELETE.from(Books).where({ ID: req.data.ID })
         ])
         return results;
+    });
+
+    srv.before('CREATE', 'Books', req => {
+        if (req.data.price < 0) req.error(400, "Price can not be negative")
+    });
+
+    srv.after('UPDATE', 'Books', req => {
+        console.log("Book Updated")
     })
 }
