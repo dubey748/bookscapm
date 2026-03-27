@@ -17,6 +17,37 @@ service RelationshipService {
 
 }
 
+// annotate CatalogService.Books with @(UI: {
+
+//     LineItem       : [
+//         {
+//             $Type: 'UI.DataField',
+//             Value: title
+//         },
+//         {
+//             $Type: 'UI.DataField',
+//             Value: Author
+//         },
+//         {
+//             $Type: 'UI.DataField',
+//             Value: price
+//         },
+//         {
+//             $Type: 'UI.DataField',
+//             Value: publishDate
+//         },
+//         {
+//             $Type: 'UI.DataField',
+//             Value: digitalCopy
+//         }
+//     ],
+
+//     SelectionFields: [
+//         title,
+//         Author
+//     ]
+
+// });
 
 annotate rel.salesOrderHeader with @(UI: {
     SelectionFields: [
